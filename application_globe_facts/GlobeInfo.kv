@@ -1,0 +1,124 @@
+WindowManager:
+    MainWindow:
+    PlayWindow:
+    QuestionWindow:
+    MapsWindow:
+    
+<MainWindow>:
+    name: "main"
+    canvas.before:
+        Color:
+            rgba: (0.2,0.5,0.8,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    MDLabel:
+        text: "Menu"
+        halign: "center"
+        pos_hint: {"center_x": 0.5, "center_y": 0.85}
+        font_style: "H2"
+    MDRectangleFlatButton:
+        text: "Play"
+        pos_hint: {"center_x": 0.5, "center_y": 0.6}
+        size_hint: 0.5,0.15
+        text_color: 0,0,0,1
+        line_color: 0,0,0,1
+        on_press: 
+            app.root.current = "play"
+            root.manager.transition.direction = "left" 
+    MDRectangleFlatButton:
+        text: "Question"
+        pos_hint: {"center_x": 0.5, "center_y": 0.4}
+        size_hint: 0.5,0.15
+        text_color: 0,0,0,1
+        line_color: 0,0,0,1
+        on_press: 
+            app.root.current = "question"
+            root.manager.transition.direction = "left" 
+    MDRectangleFlatButton:
+        text: "Maps"
+        pos_hint: {"center_x": 0.5, "center_y": 0.2}
+        size_hint: 0.5,0.15
+        text_color: 0,0,0,1
+        line_color: 0,0,0,1
+        on_press: 
+            app.root.current = "maps"
+            root.manager.transition.direction = "left" 
+
+
+<PlayWindow>
+    name: "play"
+    canvas.before:
+        Color:
+            rgba: (0.2,0.5,0.8,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    MDLabel:
+        text: "Play"
+        halign: "center"
+        pos_hint: {"center_x": 0.5, "center_y": 0.85}
+        font_style: "H2"
+    MDRectangleFlatButton:
+        text: "Go Back"
+        pos_hint: {"center_x": 0.15, "center_y": 0.85}
+        size_hint: 0.1,0.1
+        text_color: 0,0,0,1
+        line_color: 0,0,0,1   
+        on_press: 
+            app.root.current = "main"
+            root.manager.transition.direction = "right" 
+
+<QuestionWindow>
+    name: "question"
+    canvas.before:
+        Color:
+            rgba: (0.2,0.5,0.8,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    MDLabel:
+        text: "Question"
+        halign: "center"
+        pos_hint: {"center_x": 0.5, "center_y": 0.85}
+        font_style: "H2"
+    MDRectangleFlatButton:
+        text: "Go Back"
+        pos_hint: {"center_x": 0.15, "center_y": 0.85}
+        size_hint: 0.1,0.1
+        text_color: 0,0,0,1
+        line_color: 0,0,0,1   
+        on_press: 
+            app.root.current = "main"
+            root.manager.transition.direction = "right" 
+
+
+
+<MapsWindow>
+    name: "maps"
+    canvas.before:
+        Color:
+            rgba: (0.2,0.5,0.8,1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    MDLabel:
+        text: "Maps"
+        halign: "center"
+        pos_hint: {"center_x": 0.5, "center_y": 0.85}
+        font_style: "H2"
+    MDRectangleFlatButton:
+        text: "Go Back"
+        pos_hint: {"center_x": 0.15, "center_y": 0.85}
+        size_hint: 0.1,0.1
+        text_color: 0,0,0,1
+        line_color: 0,0,0,1   
+        on_press: 
+            app.root.current = "main"
+            root.manager.transition.direction = "right" 
+    Image:
+        source: 'World_Map_proto_1.jpeg'
+        size_hint: 0.7, 1
+        pos_hint: {"center_x": 0.5, "center_y": 0.4}
+
+
